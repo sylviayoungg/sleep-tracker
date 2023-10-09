@@ -1,0 +1,63 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Side Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <p routerLink="overnight"><li>Add OverNight Log</li></p>
+    <p routerLink="overnight-full-log"><li>View Full OverNight Log</li></p>
+    <p routerLink="sleepiness"><li>Add Sleepiness Log</li></p>
+    <p routerLink="sleepiness-full-log"><li>View Full Sleepiness Log</li></p>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Sleep Tracker Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <p style="font-size: 23px"><strong>Welcome Back! </strong></p>
+    Please Select the Button:
+    <br>
+    <ion-button color="primary" routerLink="overnight">Go To Add OverNight Log
+      <ion-icon slot="end" name="arrow-redo-outline"></ion-icon>
+    </ion-button>
+    <ion-button color="primary" routerLink="overnight-full-log">View Full OverNight Log
+      <ion-icon slot="end" name="arrow-redo-outline"></ion-icon>
+    </ion-button>
+    <ion-button color="primary" routerLink="sleepiness">Go To Add Sleepiness Log
+      <ion-icon slot="end" name="arrow-redo-outline"></ion-icon>
+    </ion-button>
+    <ion-button color="primary" routerLink="sleepiness-full-log">View Full Sleepiness Log
+      <ion-icon slot="end" name="arrow-redo-outline"></ion-icon>
+    </ion-button>
+  </ion-content>
+</div>
+
+<!--<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Sleep Tracker 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Sleep Tracker</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <strong>Ready to create an app?</strong>
+    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  </div>
+</ion-content>
+-->

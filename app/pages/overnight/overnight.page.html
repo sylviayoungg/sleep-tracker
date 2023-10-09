@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add OverNight Log</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>Set Time</ion-list-header>
+    <ion-item>
+      <ion-label>Sleep Start:</ion-label>
+        <ion-datetime-button datetime="starttime"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="starttime" [(ngModel)]="startDayTime"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+    </ion-item>
+    <ion-item>
+      <ion-label>Sleep End:</ion-label>
+      <ion-datetime-button datetime="endtime"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="endtime" [(ngModel)]="endDayTime"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" (click)="addNewDataClick()">
+    Add Entry
+    <ion-icon slot="end" name="add-circle"></ion-icon>
+  </ion-button>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Last Added Time</ion-card-title>
+      <ion-card-subtitle>Recent overnight log</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <li>
+        Night Start: {{startNight}}
+      </li>
+      <li>
+        Total Sleep Hours: {{recentTotalSleepHours}}
+      </li>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" routerLink="overnight-full-log">
+    View Full Log
+    <ion-icon slot="end" name="arrow-redo-outline"></ion-icon>
+  </ion-button>
+
+</ion-content>

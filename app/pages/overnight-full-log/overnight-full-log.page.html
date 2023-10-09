@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>OverNight Full Log</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+   <ion-row>
+    <ion-col style="background-color: #007AFF; color:white;"><strong>#</strong></ion-col>
+    <ion-col style="background-color: #007AFF; color:white;"><strong>Day</strong></ion-col>
+    <ion-col style="background-color: #007AFF; color:white;"><strong>Total Sleep Hours</strong></ion-col>
+   </ion-row>
+
+   <tr *ngFor="let day of dayString; index as i">
+    <ion-row>
+      <ion-col>{{i+1}}</ion-col>
+      <ion-col>{{day}}</ion-col>
+      <ion-col>{{timeString[i]}}</ion-col>
+    </ion-row>
+  </tr>
+  </ion-grid>
+</ion-content>

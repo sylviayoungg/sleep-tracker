@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Sleepiness Log</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>Select Time</ion-list-header>
+    <ion-item>
+      <ion-label>Time:</ion-label>
+        <ion-datetime-button datetime="time"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="time" [(ngModel)]="sleepinessTime"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>Select Sleepiness</ion-list-header>
+    <ion-item>
+      <ion-label>Sleepiness Levels</ion-label>
+        <ion-select [(ngModel)]="levelOfSleepiness">
+          <ion-select-option value="1">1 Feeling active</ion-select-option>
+          <ion-select-option value="2">2 Functioning at high levels</ion-select-option>
+          <ion-select-option value="3">3 Awake</ion-select-option>
+          <ion-select-option value="4">4 Somewhat foggy</ion-select-option>
+          <ion-select-option value="5">5 Foggy</ion-select-option>
+          <ion-select-option value="6">6 Sleepy</ion-select-option>
+          <ion-select-option value="7">7 No longer fighting sleep</ion-select-option>
+        </ion-select> 
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" (click)="addNewDataClick()">
+    Add Entry
+    <ion-icon slot="end" name="add-circle"></ion-icon>
+  </ion-button>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Last Added Time</ion-card-title>
+      <ion-card-subtitle>Recent Sleepiness log</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <li>
+        Time: {{dateString}}
+      </li>
+      <li>
+        Level of Sleepiness: {{settedLevelOfSleepiness}}
+      </li>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" routerLink="sleepiness-full-log">
+    View Full Log
+    <ion-icon slot="end" name="arrow-redo-outline"></ion-icon>
+  </ion-button>
+
+</ion-content>
